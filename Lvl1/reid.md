@@ -1,5 +1,4 @@
 Re-ID
-
 =====
 
 
@@ -17,7 +16,6 @@ Help the Commander assign these IDs by writing a function answer(n) which takes 
 
 
 Languages
-
 =========
 
 
@@ -29,7 +27,6 @@ To provide a Java solution, edit solution.java
 
 
 Test cases
-
 ==========
 
 
