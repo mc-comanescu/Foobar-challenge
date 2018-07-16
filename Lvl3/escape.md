@@ -1,5 +1,4 @@
 Prepare the Bunnies' Escape
-
 ===========================
 
 
@@ -17,7 +16,6 @@ Write a function answer(map) that generates the length of the shortest path from
 
 
 Languages
-
 =========
 
 
@@ -29,7 +27,6 @@ To provide a Java solution, edit solution.java
 
 
 Test cases
-
 ==========
 
 
