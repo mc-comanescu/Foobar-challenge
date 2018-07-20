@@ -1,5 +1,4 @@
-![Image of foo.bar]
-(https://github.com/mc-comanescu/Foobar-challenge/blob/master/foobar.png)
+![Image of foo.bar](/foobar.png)
 
 ```
 foobar:~/ cmcx.linux$ status
