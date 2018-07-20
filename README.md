@@ -5,6 +5,9 @@ There's a lot of talk lately about a new secretive way of recruiting programmers
 By harnesting their flagship product, google search, they can weed out engineers from the rest based on keywords and interest.
 And then when the stars align ( In my case searching global lock for go garbage corrector did it this time), you get warped into commander lambda's world to save the bunnies... 
 
+TL:DR! click on the levels to see the challenges
+------------------------------------------------
+
 ![Image of foo.bar](/foobar.png)
 
 ```
@@ -49,17 +52,5 @@ Requesting challenge...
 Commander Lambda sure is a task-master, isn't she? You're being worked to the bone!New challenge "re_id" added to your home folder.
 
 Time to solve: 48 hours.
-
-foobar:~/ cmcx.linux$ status
-Current level: 3. Challenges to complete level: 2.
-
-Level 1 100% [==========================================]
-Level 2 100% [==========================================]
-Level 3  33% [=============.............................]
-Level 4   0% [..........................................]
-Level 5   0% [..........................................]
-
-Refer a friend: https://goo.gl/ZZykri [ready]
 ```
-And you can view [LVL 1](/Lvl1/README.md)
-
+And so we started.
