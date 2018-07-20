@@ -73,3 +73,43 @@ Output:
 
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 
+Solution
+========
+We start on the chess board at the location and we explore ( recusivly ) our surroundings.
+If it's an unexplored section or we are on a shorter path we move there, otherwise we return and explore another path.
+We do this until we either run out of paths to explore or we reach our destination on our shortes path and we return.
+
+```python
+
+def valid_move(src, new_x, new_y) :
+    # get coordinates on the board
+    x = src/8 + new_x ; y = src%8 + new_y
+    # figure out if we fall out
+    if x<0 or x>7 : return -1
+    if y<0 or y>7 : return -1
+    return x*8+y
+
+def back_track(src, dest, visited) :
+    if src == dest : return 0
+    min_v = 99999999
+    for move in [ (+1,+2),(+2,+1),
+                  (-1,-2),(-2,-1),
+                  (+2,-1),(-2,+1),
+                  (+1,-2),(-1,+2),
+                  ] :
+        v = valid_move(src,move[0],move[1])
+        if v >-1 and (visited[v] == 0 or visited[v] > visited[src]) :
+            visited[v] = visited[src]+1
+            min_v = min(min_v,1+back_track(v,dest,visited))
+    return min_v
+
+def answer(src, dest):
+    visited = [ 0 for i in range(0,64) ]
+    visited[src] = 1
+    if src == dest : return 0
+    return back_track(src,dest,visited)
+    # your code here
+
+print answer(19,36)
+print answer(0,1)
+```
