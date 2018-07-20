@@ -53,3 +53,28 @@ Output:
 
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 
+
+Solution
+========
+Keep track of a list of primes, hop from odd to odd until you find the next prime, stringify it.
+
+```python
+def is_prime(n, primes) :
+    for prime in primes :
+        if n % prime == 0 : return False
+    return True
+
+def answer(n):
+    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89]
+    primes_str = "".join([str(p) for p in primes])
+    while( n+5 > len(primes_str)) :
+        next_prime = primes[len(primes)-1] +2
+        print next_prime
+        while( not is_prime(next_prime, primes)) : next_prime += 2
+        primes.append( next_prime)
+        primes_str += str(next_prime)
+    return primes_str
+
+print answer(10001)
+```
+
