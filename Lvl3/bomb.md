@@ -38,3 +38,66 @@ Output:
 
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 
+Solution
+========
+
+```python
+def cmmdc(M,F) :
+    offset = len(M)-len(F)
+    i = len(F)-1
+    while i >= 0 :
+        sub = M[i+offset]-F[i]
+        if sub < 0 : 
+            if i-1+offset < 0 :return "impossible"
+            M[i-1+offset] -= 1
+            sub += 10
+        M[i+offset] = sub
+        i -= 1
+    while offset >= 0 :
+        if M[offset] < 0 :
+            M[offset] = 10 - M[offset]
+            try : M[offset-1] -=1
+            except : return "impossible"
+        offset -=1
+    i = 0 
+    while i<len(M) and M[i] == 0 : i += 1
+    return M[i:]
+
+
+
+def increment(counter) :
+
+    add_one = 1
+    i = len(counter) - 1
+    while add_one > 0 and i>=0 :
+        counter[i] += 1
+        add_one = counter[i] / 10
+        counter[i] %= 10
+        i -= 1
+    if add_one : counter.insert(1,0)
+    return counter
+
+def answer(M, F):
+
+    M = [ ord(d)-48 for d in M ]
+    F = [ ord(d)-48 for d in F ]
+    res = []
+    counter  = [0]
+    while F != M and M != [1] :
+        if len(M) > len(F) or (len(M) == len(F) and M > F) :
+           M = cmmdc(M,F)
+        else :
+           M,F = F,M
+        increment(counter)
+        if  type(F) == str or type(M) == str : 
+            return "impossible"
+
+    return "".join(chr(48+d) for d in counter)
+    # your code here
+
+print answer("12334367845546756765423453620457","3467576545647575467678664124")
+print answer("6877","6790")
+print answer("4","7")
+print answer("2","4")
+print answer("2","1")
+```
