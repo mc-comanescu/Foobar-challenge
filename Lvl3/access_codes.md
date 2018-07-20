@@ -29,3 +29,50 @@ Output:
     (int) 3
 
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
+
+Solution
+========
+This one was tricky because google wanted all repetitions of access codes, not unique access codes. This fact wasn't made clear in the description, therefore I wasted quite a bit of time trying out different ways to solve the puzzle.
+The idea is to generate the sequences of x,y,z that respect the requirements and count them.
+A faster way is to see for a given number in the sequence, how many other numbers it divides.
+If a given i number divides a j number, then it divides all other numbers that j divides as well.
+Therefore we found an x\<y\<z and we can count all those divisions in the grand total.
+```python
+#slow answer.. this timeouts a lot
+def slow_answer(l):
+    v = [ (l[x],l[y],l[z]) 
+               for x in range(0,len(l)) 
+               for y in range(x+1,len(l)) 
+               for z in range(y+1,len(l))
+               if x < y < z and l[z] % l[y] == l[y] % l[x] == 0 
+               ] 
+    return len(v)
+
+def answer(l):
+    pass_count = 0
+    i = len(l) - 1
+    div_count = len(l) * [0]
+    while i >= 0 :
+        for j in range(i+1,len(l)) :
+            if l[j] % l[i] == 0 : 
+                div_count[i] += 1
+                pass_count += div_count[j]
+        i -= 1
+    return pass_count
+
+tests = [
+[1,1,1,2],
+[1, 2, 3, 4, 5, 6],
+[1,1,2,3,4,5,6],
+[1,1,2,3,4,5,6,6],
+[1,1,2,3,4,4,5,6],
+[2,3,7],
+[1,1,2,3,4,4,5,6,8],
+[1,1,2,4,3,4,4,4,5,6,8,8],
+[1,2,3,4,5,6,6],
+[1,1,2,3,4,5,6,7],
+        ]
+for test in tests:
+  print 'answer : ',answer(test) , ' vs ', slow_answer(test)
+
+```
