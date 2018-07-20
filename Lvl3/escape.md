@@ -56,7 +56,7 @@ Use verify [file] to test your solution and see how it does. When you are finish
 Solution
 ========
 Classic pathfinding algo. From the current position, visit the surroundings and fill them with the shortest path there.
-Once you hit your destination you print the total path.
+Once you hit your destination you print the total path.<br/>
 The twist lies in the walls, therefore we have to go through the whole single walls and knock them out one by one and retrace our path for this given variation.
 
 ```python

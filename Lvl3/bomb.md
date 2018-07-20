@@ -40,8 +40,11 @@ Use verify [file] to test your solution and see how it does. When you are finish
 
 Solution
 ========
+Well if you look well enough at the combinations and you try to retrace from the inputs to (1,1), you will notice that in fact you're using the substraction method to find the lowest common divider of 2 numbers.</br>
+Google wants to see if said numbers are primes among them, with a twist, ofc. You deal with huge numbers (as strings) and you have to figure out that you either substract A from B or you either flip A and B if A < B, all while your "numbers" are still strings.
 
 ```python
+# do M-F , save result in M to save memory and time
 def cmmdc(M,F) :
     offset = len(M)-len(F)
     i = len(F)-1
@@ -53,6 +56,7 @@ def cmmdc(M,F) :
             sub += 10
         M[i+offset] = sub
         i -= 1
+    #substract with borrow, until we run out of number in M.
     while offset >= 0 :
         if M[offset] < 0 :
             M[offset] = 10 - M[offset]
@@ -60,11 +64,12 @@ def cmmdc(M,F) :
             except : return "impossible"
         offset -=1
     i = 0 
+    # trimm leading zeros ( 00013445)
     while i<len(M) and M[i] == 0 : i += 1
     return M[i:]
 
 
-
+#function that increments on a big number
 def increment(counter) :
 
     add_one = 1
@@ -78,7 +83,7 @@ def increment(counter) :
     return counter
 
 def answer(M, F):
-
+    # convert stringy numbers into in digits to save time and brains
     M = [ ord(d)-48 for d in M ]
     F = [ ord(d)-48 for d in F ]
     res = []

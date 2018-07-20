@@ -33,7 +33,7 @@ Use verify [file] to test your solution and see how it does. When you are finish
 Solution
 ========
 This one was tricky because google wanted all repetitions of access codes, not unique access codes. This fact wasn't made clear in the description, therefore I wasted quite a bit of time trying out different ways to solve the puzzle.
-The idea is to generate the sequences of x,y,z that respect the requirements and count them.
+The idea is to generate the sequences of x,y,z that respect the requirements and count them.<br/>
 A faster way is to see for a given number in the sequence, how many other numbers it divides.
 If a given i number divides a j number, then it divides all other numbers that j divides as well.
 Therefore we found an x\<y\<z and we can count all those divisions in the grand total.
