@@ -2,8 +2,9 @@ Google foo.bar
 ==============
 As the old saying goes, if you don't know something, google it...
 There's a lot of talk lately about a new secretive way of recruiting programmers for google.
-By harnesting their flagship product, google search, they can weed out engineers from the rest based on keywords and interest.
-And then when the stars align ( In my case searching global lock for go garbage corrector did it this time), you get warped into commander lambda's world to save the bunnies... 
+By harnessing their flagship product, google search, they can weed out engineers from the rest based on keywords and interest.
+
+And then, when the stars align ( In my case searching global lock for go garbage corrector did it this time), you get warped into commander lambda's world to save the bunnies... 
 
 TL:DR! click on the levels to see the challenges
 ------------------------------------------------
